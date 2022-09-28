@@ -31,7 +31,7 @@
 #![deny(missing_docs)]
 #![allow(non_snake_case)]
 
-#[cfg(not(windows))]
+#[cfg(all(not(windows), not(target_os = "twizzler")))]
 extern crate libc;
 
 #[cfg(target_os = "hermit")]
