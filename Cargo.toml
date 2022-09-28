@@ -11,7 +11,7 @@ keywords = ["cpu", "cpus", "cores"]
 categories = ["hardware-support"]
 readme = "README.md"
 
-[target.'cfg(not(windows))'.dependencies]
+[target.'cfg(all(not(windows), not(target_os = "twizzler")))'.dependencies]
 libc = "0.2.26"
 
 [target.'cfg(all(any(target_arch = "x86_64", target_arch = "aarch64"), target_os = "hermit"))'.dependencies]
